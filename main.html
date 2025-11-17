@@ -1,15 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>URL Length</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<h2>URL Length Checker</h2>
+    <h1 id="verification_heading">Verify Your Account</h1>
+    <p id="verification_subtext">Please enter the 6-digit code sent to your registered mobile number.</p>
 
-<button onclick="showURLLength()">Check URL Length</button>
+    <div class="code-container">
+        <input type="text" maxlength="1" class="code" />
+        <input type="text" maxlength="1" class="code" />
+        <input type="text" maxlength="1" class="code" />
+        <input type="text" maxlength="1" class="code" />
+        <input type="text" maxlength="1" class="code" />
+        <input type="text" maxlength="1" class="code" />
+    </div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

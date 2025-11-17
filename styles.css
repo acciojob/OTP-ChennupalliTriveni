@@ -1,12 +1,26 @@
-/*  your css code here. If applicable */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    margin-top: 50px;
+    padding-top: 70px;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+.code-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.code {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+}
+
+.code:focus {
+    outline: none;
+    border-color: #4b7bec;
 }
