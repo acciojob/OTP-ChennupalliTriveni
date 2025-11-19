@@ -1,32 +1,28 @@
 const inputs = document.querySelectorAll(".code");
 
-// Focus first input
-inputs[0].focus();
-
+// Auto move + only numbers allowed
 inputs.forEach((input, index) => {
 
-  input.addEventListener("input", (e) => {
-    const value = e.target.value.replace(/\D/g, ""); // only digits
-    e.target.value = value;
+  input.addEventListener("input", () => {
+    input.value = input.value.replace(/[^0-9]/g, "");
 
-    if (value && index < inputs.length - 1) {
+    if (input.value && index < inputs.length - 1) {
       inputs[index + 1].focus();
     }
   });
 
+  // Backspace → previous input
   input.addEventListener("keydown", (e) => {
-    if (e.key === "Backspace") {
-      if (input.value === "") {
-        // current empty → go to previous
-        if (index > 0) {
-          inputs[index - 1].focus();
-          inputs[index - 1].value = "";
-        }
-      } else {
-        // current has value → clear it
-        input.value = "";
-      }
+    if (e.key === "Backspace" && !input.value && index > 0) {
+      inputs[index - 1].focus();
     }
   });
+});
 
+// Paste complete OTP
+inputs[0].addEventListener("paste", (e) => {
+  const text = e.clipboardData.getData("text").replace(/\D/g, "");
+  for (let i = 0; i < inputs.length; i++) {
+    inputs[i].value = text[i] || "";
+  }
 });
