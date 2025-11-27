@@ -16,13 +16,13 @@ body {
   margin-bottom: 40px;
 }
 
-.code-container {
+.otp-inputs {
   display: flex;
   justify-content: center;
   gap: 15px;
 }
 
-.code {
+.otp-input {
   width: 60px;
   height: 70px;
   text-align: center;
@@ -31,7 +31,7 @@ body {
   border-radius: 8px;
 }
 
-.code:focus {
+.otp-input:focus {
   border-color: black;
   outline: none;
 }
